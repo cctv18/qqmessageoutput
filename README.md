@@ -1,34 +1,27 @@
 # qqmessageoutput
-安卓QQ聊天记录导出/安卓QQ数据库解密
 
-# Usage
+安卓QQ聊天记录导出/安卓QQ数据库解密，基于[roadwide/qqmessageoutput](https://github.com/roadwide/qqmessageoutput)。
 
-```python
-# 初始化
-q = QQoutput(dbfile, key)
-# 获得所有好友的个人资料
-q.getAllMyFriends()
-# 导出聊天记录
-q.output(yourfriendqq, mode)
-```
+可以一次性导出所有聊天记录。
 
-# Tips
+# 1 本项目的使用方法
 
-获取db文件手机最好要root。但是当初经过我不屑的探索，没有root也不是没有办法。
+参看 c_use_example.py
 
-在QQ官方更新了聊天记录备份功能之后，可以先将数据备份到电脑，然后再把数据导入到一个root过的设备（比如模拟器），再提取db文件。
+# 2 获取db的方法
 
-获取db文件的方法请移步我写的文章：[安卓QQ聊天记录导出、备份完全攻略](https://www.cnblogs.com/roadwide/p/11220211.html)
+[安卓QQ聊天记录导出、备份完全攻略](https://www.cnblogs.com/roadwide/p/11220211.html)
+
+默认路径：
 
 ```
 data\data\com.tencent.mobileqq\databases\你的QQ.db
-```
-另外我还发现，如果聊天记录过多，会将较早的聊天记录存入以下数据库
-```
 data\data\com.tencent.mobileqq\databases\slowtable_你的QQ.db
 ```
 
-yourkey是解密的密钥，一般是手机序列号，拨号键盘下输入`*#06#`
+# 3 获取key的方法
+
+key是解密的密钥，一般是手机序列号(imei)，拨号键盘下输入`*#06#`
 
 部分新版qq的解密密钥则可能位于以下文件中
 
@@ -36,24 +29,8 @@ yourkey是解密的密钥，一般是手机序列号，拨号键盘下输入`*#0
 data\data\com.tencent.mobileqq\files\kc
 ```
 
-手机QQ的db文件加密方式是异或加密，如果找不到自己的key可以反向破解
+手机QQ的db文件加密方式是异或加密，如果找不到自己的key可以反向破解:
 
-
-
-**刚刚发现，QQ竟然支持手机聊天记录备份了！！！**
-
-![QQmsg](./QQmsg.png)
-
-# Update
-
-[2019-10-02]新增了QQ群的消息记录导出，mode=1是好友，2是群
-
-[2020-04-22]增加导出所有好友个人资料功能，优化代码（以前写的代码冗余太多，~~太烂了~~）
-
-[2020-07-01]增加可能的其他解密key，感谢@[howyay](https://github.com/howyay)提供
-
-# ToDo
-
-- [ ] 自行解密key功能
-- [ ] 导出的聊天记录用不同颜色区分是“你”说的，还是“我”说的
-- [ ] 导出的聊天记录用QQ-昵称-备注这样的形式，增加辨识度
+```
+key = 原文 XOR 密文
+```
