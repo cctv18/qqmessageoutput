@@ -14,7 +14,7 @@ GUI([GitHub下载](https://github.com/ctem049/qqmessageoutput/releases/download/
 
 选择db路径和导出路径，输入解密key(一般为imei)，获取方法可见下文。选择导出所有记录或者指定的好友/群聊。
 
-db数据文件用于导出slowtable，即db路径(第一项)选择`你的QQ.db`，db数据文件(最后一项)选择`slowtable_你的QQ.db`，即可导出`slowtable_你的QQ.db`中的聊天记录。
+db数据文件用于导出slowtable(*可留空不填*)，即db路径(第一项)选择`你的QQ.db`，db数据文件(最后一项)选择`slowtable_你的QQ.db`，即可导出`slowtable_你的QQ.db`中的聊天记录。
 
 # 2 获取db的方法
 
