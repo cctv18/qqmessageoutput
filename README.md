@@ -8,7 +8,7 @@
 
 作为python库使用, 请参看c_use_example.py
 
-GUI([GitHub下载](https://github.com/ctem049/qqmessageoutput/releases))使用：
+GUI([GitHub下载](https://github.com/ctem049/qqmessageoutput/releases/download/1.0.200726/qex_v1.0.200726_win64.exe))使用：
 
 ![GUI](c_gui.png)
 
