@@ -1,4 +1,4 @@
-from c_qq import c_qqex # 导入c_qq.py
+from c_qq import c_qqex  # 导入c_qq.py
 
 # db文件位置
 dbfile = 'test/563563.db'
@@ -11,7 +11,7 @@ key = '1234567890'
 outdir = 'test/563563'
 
 # 创建对象
-q = c_qqex(dbfile,key,outdir)
+q = c_qqex(dbfile, key, outdir)
 
 # 获取所有信息
 q.getInfo()
