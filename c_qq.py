@@ -123,7 +123,7 @@ class c_qqex():
 
             # 解密
             uin = self.d.decode(uin, 1)
-            stime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(stime))
+            # stime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(stime))
             msg = self.d.decode(msg, 0)
             suin = self.d.decode(suin, 1)
             fuin = self.d.decode(fuin, 1)
@@ -165,7 +165,7 @@ class c_qqex():
             # 解密
             tuin = self.d.decode(tuin, 1)
             uin = self.d.decode(uin, 1)
-            stime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(stime))
+            # stime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(stime))
             msg = self.d.decode(msg, 0)
             suin = self.d.decode(suin, 1)
 
@@ -342,6 +342,8 @@ class c_qqex():
         outfile = os.path.join(self.outdir, "f_{}.txt".format(name))
         fc = open(outfile, "w+", encoding="utf-8")
 
+        # 按时间排序
+        msgs.sort(key=lambda msg: msg[1])
         # 3.1.1 导出为txt文本
         if (mode == 'txt'):
             for i in msgs:
@@ -349,6 +351,8 @@ class c_qqex():
                 uin, stime, msg, suin, fuin = i
                 # 替换表情
                 msg = self.emReplace(msg)
+                # 替换时间
+                stime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(stime))
                 if (uin == suin):
                     # 是自己发言，以===开头
                     fc.write('==={}({}) {}\n{}\n\n'.format(
@@ -375,6 +379,8 @@ class c_qqex():
         outfile = os.path.join(self.outdir, "{}.txt".format(name))
         fc = open(outfile, "w+", encoding="utf-8")
 
+        # 按时间排序
+        msgs.sort(key=lambda msg: msg[2])
         # 3.1.1 导出为txt文本
         if (mode == 'txt'):
             for i in msgs:
@@ -382,6 +388,8 @@ class c_qqex():
                 tuin, uin, stime, msg, suin = i
                 # 替换表情
                 msg = self.emReplace(msg)
+                # 替换时间
+                stime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(stime))
                 if (uin == suin):
                     # 是自己发言，以===开头
                     fc.write('==={}({}) {}\n{}\n\n'.format(

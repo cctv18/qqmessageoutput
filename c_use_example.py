@@ -25,9 +25,6 @@ q.exTroop()
 # 导出群成员信息
 q.exTroopMem()
 
-# 导入数据
-# q.connectDB(dbfile2)
-
 # 获取指定好友
 # q.getMsgFriends('77830', save=True)
 
@@ -35,6 +32,10 @@ q.exTroopMem()
 # q.getMsgTroop('12890', save=True)
 
 # 获取所有聊天记录
+q.getMsgAll()
+
+# 获取第二份聊天记录
+q.connectDB(dbfile2)
 q.getMsgAll()
 
 # 导出所有聊天记录
