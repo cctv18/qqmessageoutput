@@ -4,17 +4,17 @@
 
 可以一次性导出好友数据和所有聊天记录，如果数据较多，导出时请耐心等待。
 
-# 1 本项目的使用方法
+# 1 使用方法
 
 作为python库使用, 请参看c_use_example.py
 
-GUI([GitHub下载](https://github.com/ctem049/qqmessageoutput/releases/download/1.0.200726/qex_v1.0.200726_win64.exe))使用：
+GUI([GitHub下载](https://github.com/ctem049/qqmessageoutput/releases/download/1.1.210104/qex_v1.1.210104_win64.exe))使用：
 
 ![GUI](c_gui.png)
 
 选择db路径和导出路径，输入解密key(一般为imei)，获取方法可见下文。选择导出所有记录或者指定的好友/群聊。
 
-db数据文件用于导出slowtable(*可留空不填*)，即db路径(第一项)选择`你的QQ.db`，db数据文件(最后一项)选择`slowtable_你的QQ.db`，即可导出`slowtable_你的QQ.db`中的聊天记录。
+填入最后一项(*可留空不填*)可同时导出slowtable中的数据，即db路径(第一项)选择`你的QQ.db`，最后一项选择`slowtable_你的QQ.db`，即可同时导出两个数据库中的聊天记录。
 
 # 2 获取db的方法
 
