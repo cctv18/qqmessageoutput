@@ -29,12 +29,18 @@ data\data\com.tencent.mobileqq\databases\slowtable_你的QQ.db
 
 # 3 获取key的方法
 
-key是解密的密钥，一般是手机序列号(imei)，拨号键盘下输入`*#06#`
+key是解密的密钥
 
-部分新版qq的解密密钥则可能位于以下文件中
+当前新版QQ的解密密钥位于以下文件中：
 
 ```
 data\data\com.tencent.mobileqq\files\kc
+```
+
+旧版QQ一般是手机序列号(imei)，拨号键盘下输入`*#06#`获取，或者位于：
+
+```
+data\data\com.tencent.mobileqq\files\imei
 ```
 
 手机QQ的db文件加密方式是异或加密，如果找不到自己的key可以反向破解:
