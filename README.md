@@ -42,3 +42,12 @@ data\data\com.tencent.mobileqq\files\kc
 ```
 key = 原文 XOR 密文
 ```
+
+# 4 win64打包
+
+```
+conda create -n qqm python=3.10
+conda activate qqm
+conda install pyinstaller
+pyinstaller -F -w c_gui.py
+```

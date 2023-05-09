@@ -88,7 +88,7 @@ class c_qqex():
             quin = self.d.decode(quin, 1)
             tname = self.d.decode(tname, 1)
             qname = self.d.decode(qname, 1)
-            jtime = self.d.decode(jtime, 1)
+            # jtime = self.d.decode(jtime, 1)
 
             # 写入troopmem
             if (tuin):

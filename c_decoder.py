@@ -39,11 +39,12 @@ class c_decoder():
                     # 如果大于ffff 处理emoji
                     if (unicode > 0xffff):
                         # 与两个密码进行异或
-                        code = unicode ^ ((ord(self.key[i+j % len(self.key)])<<10) + ord(self.key[i+j+1 % len(self.key)]))
+                        code = unicode ^ ((ord(self.key[ (i+j) % len(self.key)])<<10) + ord(self.key[ (i+j+1) % len(self.key)]))
                         strd += chr(code)
                         j = j + 1
                     else:
-                        strd += chr(ord(clp[i]) ^ ord(self.key[i+j % len(self.key)]))
-            except:
+                        strd += chr(ord(clp[i]) ^ ord( self.key[ (i+j) % len(self.key) ] ))
+            except Exception as e:
+                print(e)
                 strd = ''
         return strd
